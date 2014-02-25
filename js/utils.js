@@ -1,3 +1,17 @@
+var Convention = function(basename) {
+  var Conv = this;
+  var namesplit = basename.split('.');
+  this.basename = basename;
+  this.ext = namesplit.length > 1 ? namesplit.slice(-1) : "";
+  this.noext = namesplit.slice(0,-1).join(".");
+  // Naming conventions
+  this.rollover = function() {
+    this.on = Conv.basename;
+    this.off = Conv.noext + "rollover." + Conv.ext;
+    return this;
+  }
+  return this;
+};
 
 // Steven's tools (no idea original source, as these appear to be minimized)
 function MM_swapImgRestore() { //v3.0

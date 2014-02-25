@@ -13,14 +13,27 @@
   <link href="css/half-slider.css" type="text/css" rel="stylesheet" />
   <link href="css/main.css" type="text/css" />
   <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
-  <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/lodash.compat.min.js"></script>
+  <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+  <!--<script type="text/javascript" src="js/bootstrap.js"></script>-->
   <script type="text/javascript" src="js/utils.js"></script>
   <script type="text/javascript">
-    var images=['img/buttonrollover.png','img/facebookrollover.png']
-    $(function() {
-        MM_preloadImages(images);
+    var rollover_images = _.transform({
+      'nationalbutton':'img/button.png',
+      'facebookbutton':'img/facebook.png'
+    }, function(r, v, k) {
+      return r[k] = new Convention(v).rollover();
     });
+
+    $(function() {
+      MM_preloadImages(_.pluck(rollover_images, 'off'));
+      $("#nationalbutton a").mouseout(function() { MM_swapImgRestore(); });
+      $("#nationalbutton a").mouseover(function() { 
+        MM_swapImg('nationalbutton','',rollover_images['nationalbutton'].off, 1); 
+      });
+//onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('facebookbutton','','../../../Users/Steven/Documents/ThetaTau/facebookrollover.png',1)" });
+  
   </script>
 </head>
 <body>
@@ -112,19 +125,12 @@
             </div>
         </div>
 
-            <div class="row">
-                <div class="col-lg-12"><a href="thetatau.org" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('nationalbutton','','../../../Users/Steven/Documents/ThetaTau/buttonrollover.png',1)"><img src="../../../Users/Steven/Documents/ThetaTau/button.png" alt="" width="100" height="55" id="nationalbutton"></a>
-                <a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('facebookbutton','','../../../Users/Steven/Documents/ThetaTau/facebookrollover.png',1)"><img src="../../../Users/Steven/Documents/ThetaTau/facebook.png" alt="" width="100" height="100" id="facebookbutton"></a></div>
-            </div>
+<div class="row">
+<div id="nationalbutton" class="col-lg-12"><a href="thetatau.org"><img src="../../../Users/Steven/Documents/ThetaTau/button.png" alt="" width="100" height="55" id="nationalbutton"></a>
+<a href="#" ><img src="../../../Users/Steven/Documents/ThetaTau/facebook.png" alt="" width="100" height="100" id="facebookbutton"></a></div>
+</div>
         
     </div>
-    <!-- /.container -->
-
-    <!-- JavaScript -->
-    <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.js"></script>
-
-    <!-- Script to Activate the Carousel -->
     <script>
     $('.carousel').carousel({
         interval: 5000 //changes the speed
