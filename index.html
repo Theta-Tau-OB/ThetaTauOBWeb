@@ -1,147 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
-
 <head>
   <title>Theta Tau OB</title>
-  <!-- AP: is this needed? Unfamilar with much of css3 though -->
-  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
   <meta charset="utf-8">
-  
-  <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
-  <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" />
-  <link href="css/half-slider.css" type="text/css" rel="stylesheet" />
-  <link href="css/main.css" type="text/css" />
   <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/lodash.compat.min.js"></script>
+  <link rel="stylesheet" href="css/main.css" type="text/css" />
   <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
-  <!--<script type="text/javascript" src="js/bootstrap.js"></script>-->
-  <script type="text/javascript" src="js/utils.js"></script>
-  <script type="text/javascript">
-    var rollover_images = _.transform({
-      'nationalbutton':'img/button.png',
-      'facebookbutton':'img/facebook.png'
-    }, function(r, v, k) {
-      return r[k] = new Convention(v).rollover();
-    });
-
-    $(function() {
-      MM_preloadImages(_.pluck(rollover_images, 'off'));
-      $("#nationalbutton a").mouseout(function() { MM_swapImgRestore(); });
-      $("#nationalbutton a").mouseover(function() { 
-        MM_swapImg('nationalbutton','',rollover_images['nationalbutton'].off, 1); 
-      });
-//onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('facebookbutton','','../../../Users/Steven/Documents/ThetaTau/facebookrollover.png',1)"
-    });
-  
-  </script>
+  <script type="text/javascript" src="js/lodash.compat.min.js"></script>
+  <script type="text/javascript" src="js/members.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.php">Theta Tau</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="#about">About</a>
-                    </li>
-                    <li><a href="#rush">Rush</a>
-                    </li>
-                    <li><a href="#members">Members List</a>
-                    </li>
-                    <li><a href="#photos">Photos</a>
-                    </li>
-                  <li><a href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <div id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <div class="fill" style="background-image:url('http://i.imgur.com/e6Q3qYw.jpg');"></div>
-                <div class="carousel-caption">
-                    <h1>Theta Tau Professional Engineering Fraternity</h1>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('https://scontent-b.xx.fbcdn.net/hphotos-ash3/t1/544221_621808934502038_778529624_n.jpg');"></div>
-                <div class="carousel-caption">
-                    <h1>Engineering Leaders</h1>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('http://i.imgur.com/zAg7813.jpg?2');"></div>
-                <div class="carousel-caption">
-                    <h1>Service, Profession, Brotherhood</h1>
-                </div>
-            </div>
-        </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-    </div>
-
-    <div class="container">
-
-        <div class="row section">
-            <div class="col-lg-12">
-                <h1>Omicron Beta Chapter of Theta Tau</h1>
-                <p>The nation's foremost fraternity for engineers.</p>
-                <ul>
-                    <li>Rush</li>
-                    <li>Active Members</li>
-                    <li>Family Tree</li>
-                    <li>Officers and Contact Information</li>
-                    <li>Photo Album</li>
-                    <li>National Website</li>
-                </ul>
-            </div>
-        </div>
-
-    <div class="row">
-      <div id="nationalbutton" class="col-lg-12">
-        <a href="http://thetatau.org">
-          <img src="img/button.png" alt="" width="100" height="55" id="nationalbutton">
-        </a>
-        <a href="#">
-          <img src="img/facebook.png" alt="" width="100" height="100" id="facebookbutton">
-        </a>
-      </div>
-    </div>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#members">Members</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#events">Events</a></li>
+    </ul>
+  </nav>
+  <!-- load carousel via javascript -->
+  <div id='splash' class='carousel'></div>
+  <div id='content'>
+    <!-- TODO: About -->
+    <h1>Omicron Beta Chapter of Theta Tau</h1>
+    <p>The nation's foremost fraternity for engineers.</p>
+    <ul>
+      <li>Rush</li>
+      <li>Active Members</li>
+      <li>Family Tree</li>
+      <li>Officers and Contact Information</li>
+      <li>Photo Album</li>
+      <li>National Website</li>
+    </ul>
+  </div>
+  <div class="footer">
+    <!-- TODO: Footer 
+    <div id="nationalbutton" class="col-lg-12">
+      <a href="http://thetatau.org">
+        <img src="img/button.png" alt="" width="100" height="55" id="nationalbutton">
+      </a>
+      <a href="#">
+        <img src="img/facebook.png" alt="" width="100" height="100" id="facebookbutton">
+      </a>
+    </div>-->
   </div>
   <script>
-  $('.carousel').carousel({
-    interval: 5000 //changes the speed
-  })
+    $(function() {
+      window.addEventListener('hashchange', router);  
+      window.addEventListener('load', router);  
+    })
   </script>
 </body>
-
 </html>

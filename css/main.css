@@ -1,6 +1,32 @@
-
-
-body,td,th {
-	color: #FFCC33;
+body {
+  font-family:Arial
 }
-</style>
+
+nav {
+  padding:10px;
+  background-color:#8B0000;
+  font-size:150%;
+}
+
+nav ul {
+  width:500px;
+  margin:0 auto;
+}
+
+nav li {
+  padding:0px 10px;
+  display:inline-block;
+  list-style-type:none;
+}
+
+nav a {
+  color:#FFCC33;
+  box-shadow:5px #EDEAB5;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+#content {
+  padding:10px;
+  background-color:#EDEAB5;
+}
