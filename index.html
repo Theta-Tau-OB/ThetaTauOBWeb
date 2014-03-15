@@ -8,6 +8,7 @@
   <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
   <script type="text/javascript" src="js/lodash.compat.min.js"></script>
   <script type="text/javascript" src="js/members.js"></script>
+  <script type="text/javascript" src="js/facebookfeed.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
@@ -47,8 +48,17 @@
   </div>
   <script>
     $(function() {
-      window.addEventListener('hashchange', router);  
-      window.addEventListener('load', router);  
+      window.addEventListener('hashchange', function() {
+        router(function() {
+            makeemails();
+        });
+      });  
+      window.addEventListener('load', function() {
+        router(function() {
+            makeemails();
+        });
+      });  
+      //loadFacebookFeed('#content');
     })
   </script>
 </body>

@@ -1,6 +1,7 @@
 // Displays members tree
-function loadMembers(el,url,resource) {
-    $.get(resource, function(data) {
-        $(el).html(data)
+function loadMembers(el,url,callback,resource) {
+    $.getJSON(resource, function(data) {
+        $(el).html(JSON.stringify(data))
+        callback()
     })
 }

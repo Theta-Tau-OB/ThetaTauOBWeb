@@ -21,6 +21,18 @@ nav ul {
   margin:0 auto;
 }
 
+.contactlist li {
+  list-style-type:none;
+  display:block;
+}
+.contactlist li span:last-child {
+}
+.contactlist li span:first-child {
+  width:200px;
+  font-weight:bold;
+  display:inline-block;
+}
+
 nav li {
   padding:0px 10px;
   display:inline-block;
