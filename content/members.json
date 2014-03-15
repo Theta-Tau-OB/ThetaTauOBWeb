@@ -1,17 +1,16 @@
-
 [
     {
-        'OB':177,
-        'fname':'Ian',
-        'lname':'Fougerousse',
-        'nname':'Bedbreaker',
-        'bigbro':null
+        "OB":177,
+        "fname":"Ian",
+        "lname":"Fougerousse",
+        "nname":"Bedbreaker",
+        "bigbro":null
     },
     {
-        'OB':197,
-        'fname':'Allen',
-        'lname':'Polak',
-        'nname':'Wambulance',
-        'bigbro':177
+        "OB":197,
+        "fname":"Allen",
+        "lname":"Polak",
+        "nname":"Wambulance",
+        "bigbro":177
     }
 ]
