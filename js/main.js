@@ -1,5 +1,7 @@
-function load(el,target) {
-    $(el).html('Hello ' + target)
+function load(el,url,resource) {
+    $.get(resource, function(data) {
+        $(el).html(data)
+    })
 }
 var paths = {
     '/':{'fn':load,'arg':'content/about.html'},

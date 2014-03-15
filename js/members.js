@@ -1,4 +1,6 @@
 // Displays members tree
-function loadMembers(target) {
-    $(target).html('Loading members')
+function loadMembers(el,url,resource) {
+    $.get(resource, function(data) {
+        $(el).html(data)
+    })
 }
