@@ -6,9 +6,9 @@ body {
 
 nav {
   position:fixed;
-  height:30px;
+  height:50px;
   overflow:hidden;
-  z-index:1;
+  z-index:1000;
   padding:10px 0 10px 0;
   margin:0;
   background-color:#8B0000;
@@ -38,11 +38,19 @@ nav li {
   display:inline-block;
   list-style-type:none;
 }
+nav li:hover, nav li:active {
+    opacity:0.5;
+}
 
 nav h1 {
   padding:0px;
   margin:0px;
   display:inline-block;
+}
+
+h1 a:hover, h1 a:focus {
+  color:#FFCC33;
+  text-decoration:none;
 }
 
 a {
@@ -69,6 +77,15 @@ h2 {
 
 #splash {
   min-height:50px;
+}
+#splash .carousel-control {
+  vertical-align:middle;
+}
+#splash .item :first-child {
+  background-repeat: no-repeat;
+  margin:auto;
+  width:800px;
+  height:200px;
 }
 
 #content {

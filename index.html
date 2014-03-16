@@ -4,9 +4,12 @@
   <title>Theta Tau OB</title>
   <meta charset="utf-8">
   <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
   <link rel="stylesheet" href="css/main.css" type="text/css" />
   <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
   <script type="text/javascript" src="js/lodash.compat.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/handlebars.js"></script>
   <script type="text/javascript" src="js/members.js"></script>
   <script type="text/javascript" src="js/facebookfeed.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
@@ -21,7 +24,7 @@
     </ul>
   </nav>
   <!-- load carousel via javascript -->
-  <div id='splash' class='carousel'>&nbsp;</div>
+  <div id='splash'>&nbsp;</div>
   <div id='content'>
     <!-- TODO: About -->
     <h2>Omicron Beta Chapter of Theta Tau</h2>
@@ -59,6 +62,18 @@
         });
       });  
       //loadFacebookFeed('#content');
+      var images = [
+        {src:'img/title1.jpg', caption:'BLAH', active:true},
+        {src:'http://i.imgur.com/zAg7813.jpg?2', caption:'Some other caption'},
+        {src:'http://i.imgur.com/e6Q3qYw.jpg', caption:'Last caption'}
+      ]
+      $.get('content/carousel.tmpl',function(data){
+        var template = Handlebars.compile(data)
+        $('#splash').html(template(images))
+        $('.carousel').carousel({
+          interval: 5000
+        })
+      });
     })
   </script>
 </body>
