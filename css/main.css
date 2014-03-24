@@ -1,10 +1,10 @@
 body {
   font-family:Arial;
   padding:0px;
-  margin:0 8px 8px 8px;
 }
 
 nav {
+  font-family:Georgia;
   position:fixed;
   height:50px;
   overflow:hidden;
@@ -73,10 +73,21 @@ h2 {
   color:#8B0000;
   font-weight:bold;
   font-size:150%;
+  text-shadow:
+  -1px -1px 0 #FFCC33,
+  1px -1px 0 #FFCC33,
+  -1px 1px 0 #FFCC33,
+  1px 1px 0 #FFCC33;
+}
+
+h5 {
+  color:#8B0000;
+  font-weight:bold;
 }
 
 #splash {
   min-height:50px;
+  background-color:#FFCC33;
 }
 #splash .carousel-control {
   vertical-align:middle;
